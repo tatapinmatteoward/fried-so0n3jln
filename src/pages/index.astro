@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Fried Faith: Exploring Chicken's Soul-Stirring Stories";
+const pageDescription = "Welcome to Fried Faith, where we boldly uncover the vibrant cultural heritage and culinary tales of chicken across the globe. From ancient rituals to modern feasts, join us in celebrating this timeless ingredient with energy and passion.";
+
+const features = [
+  {
+    title: "Historical Roots",
+    description: "Discover how chicken shaped empires and festivals through centuries of tradition.",
+    icon: "fas fa-history"
+  },
+  {
+    title: "Global Flavors",
+    description: "Savor stories from spicy Indian curries to soulful Southern fried delights.",
+    icon: "fas fa-globe-americas"
+  },
+  {
+    title: "Cultural Rituals",
+    description: "Explore how chicken plays a central role in sacred ceremonies and celebrations.",
+    icon: "fas fa-hand-holding-heart"
+  }
+];
+
+const testimonials = [
+  {
+    quote: "This site transformed my understanding of chicken's cultural significance.",
+    author: "Chef Maria Rodriguez"
+  },
+  {
+    quote: "The storytelling is as delicious as the recipes they share.",
+    author: "Dr. James Chen"
+  },
+  {
+    quote: "Finally, a place that celebrates chicken's rich heritage with passion.",
+    author: "Amina Johnson"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#8b0000] via-[#b00000] to-[#8b0000] py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CiAgPHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0zMCAwVjYwTzMwIDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Fried Faith
+        </h1>
+        <div class="h-1 w-24 bg-[#ffdb58] mx-auto mb-8"></div>
+        <p class="text-xl md:text-2xl text-[#ffdb58] mb-10 font-serif italic">
+          Exploring Chicken's Soul-Stirring Stories in Culture and Cuisine
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-white text-[#8b0000] hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Explore Stories
+          </button>
+          <button class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300">
+            Discover Recipes
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-20 bg-gradient-to-b from-white to-[#fff5f5]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#8b0000] mb-6">Welcome to Fried Faith</h2>
+        <div class="h-1 w-16 bg-[#ffdb58] mx-auto mb-8"></div>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Step into a world where the humble chicken takes center stage, igniting flavors, traditions, and heartfelt narratives.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-[#8b0000]">Exploring Chicken's Soul-Stirring Stories in Culture and Cuisine</h3>
+          <p class="text-gray-700 leading-relaxed">
+            At Fried Faith, we're passionate about the <span class="font-bold text-[#8b0000]">bold</span> intersections of culture and cuisine that make chicken more than just a meal—it's a symbol of heritage, community, and innovation.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Join us in celebrating this timeless ingredient with energy and passion as we uncover the rich tapestry of chicken's role across human civilization.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="bg-[#8b0000] rounded-2xl p-8 text-white shadow-2xl transform rotate-3">
+            <div class="bg-[#ffdb58] rounded-lg p-6 transform -rotate-3">
+              <div class="flex items-center space-x-4">
+                <i class="fas fa-chicken text-4xl text-[#8b0000]"></i>
+                <div>
+                  <h4 class="text-xl font-bold text-[#8b0000]">Chicken</h4>
+                  <p class="text-[#8b0000]">More Than Just Food</p>
+                </div>
+              </div>
+              <p class="mt-4 text-gray-800 italic">"A journey through time, taste, and tradition"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-[#8b0000]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Chicken? A Cultural Odyssey</h2>
+        <div class="h-1 w-16 bg-[#ffdb58] mx-auto mb-6"></div>
+        <p class="text-xl text-[#ffdb58] max-w-3xl mx-auto">
+          Chicken isn't just food; it's woven into the fabric of societies worldwide.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 border border-white/20">
+            <div class="text-4xl text-[#ffdb58] mb-6">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-4">{feature.title}</h3>
+            <p class="text-[#ffdb58]">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gradient-to-r from-[#ffdb58]/10 to-[#8b0000]/10">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#8b0000] mb-4">Stories That Move Us</h2>
+        <div class="h-1 w-16 bg-[#ffdb58] mx-auto mb-6"></div>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          What our community says about their journey with Fried Faith
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#8b0000] transform hover:scale-105 transition-all duration-300">
+            <div class="text-[#ffdb58] text-3xl mb-4">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="text-gray-700 italic mb-6">"{testimonial.quote}"</p>
+            <p class="font-bold text-[#8b0000]">— {testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-br from-[#8b0000] to-[#b00000]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Explore?</h2>
+      <p class="text-xl text-[#ffdb58] mb-10 max-w-3xl mx-auto">
+        Join our community of culinary adventurers and discover the soul-stirring stories that define chicken's global legacy.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-white text-[#8b0000] hover:bg-gray-100 font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+          Start Your Journey
+        </button>
+        <button class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-10 rounded-full text-lg transition-all duration-300">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+  .hero-pattern {
+    background-image: radial-gradient(#8b0000 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.05;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+</style>

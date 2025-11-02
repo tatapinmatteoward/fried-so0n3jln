@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Contact Us | Fried Faith";
+const pageDescription = "Connect with Fried Faith to share your soul-stirring chicken tales, collaborate on cultural stories, or inquire about our bold explorations in cuisine and heritage.";
+const socialLinks = [
+  { name: "Instagram", handle: "@friedfaith", url: "https://instagram.com/friedfaith", icon: "fab fa-instagram" },
+  { name: "Twitter", handle: "@FriedFaithStories", url: "https://twitter.com/friedfaithstories", icon: "fab fa-twitter" },
+  { name: "Facebook", handle: "Fried Faith", url: "https://facebook.com/friedfaith", icon: "fab fa-facebook" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#8b0000] via-[#a50000] to-[#6b0000] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2ZmZGRiOCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          Get in Touch with <span class="text-[#ffdb58]">Fried Faith</span>
+        </h1>
+        <p class="text-xl text-[#ffdb58] mb-8 max-w-2xl mx-auto">
+          Share your soul-stirring chicken tales, collaborate on cultural stories, or inquire about our bold explorations in cuisine and heritage.
+        </p>
+        <div class="flex justify-center space-x-4">
+          <div class="w-16 h-16 rounded-full bg-[#ffdb58] flex items-center justify-center">
+            <i class="fas fa-egg text-[#8b0000] text-2xl"></i>
+          </div>
+          <div class="w-16 h-16 rounded-full bg-[#ffdb58] flex items-center justify-center">
+            <i class="fas fa-fire text-[#8b0000] text-2xl"></i>
+          </div>
+          <div class="w-16 h-16 rounded-full bg-[#ffdb58] flex items-center justify-center">
+            <i class="fas fa-heart text-[#8b0000] text-2xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <section class="py-16 bg-gradient-to-b from-white to-[#f8f8f8]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border-l-8 border-[#8b0000]">
+          <h2 class="text-3xl font-bold text-[#333] mb-6 pb-2 border-b-2 border-[#ffdb58]">
+            Our Soul-Stirring Community
+          </h2>
+          
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            At <strong class="text-[#8b0000]">Fried Faith</strong>, we're passionate about uncovering the vibrant stories behind chicken in global cultures and cuisines. Whether you have a family recipe with deep roots, a cultural insight to share, or questions about our latest features, we'd love to hear from you!
+          </p>
+          
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+            Our community thrives on energetic exchanges that celebrate heritage and flavor. Reach out today and let's stir up some inspiration together.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div class="bg-gradient-to-br from-[#ffdb58] to-[#ffc92b] rounded-xl p-6 shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
+              <h3 class="text-xl font-bold text-[#8b0000] mb-4 flex items-center">
+                <i class="fas fa-envelope mr-3"></i> Email Us
+              </h3>
+              <p class="text-gray-800 mb-4">
+                Drop us a line at <a href="mailto:info@friedfaith.com" class="underline font-semibold hover:text-[#8b0000]">info@friedfaith.com</a> for general inquiries, story submissions, or partnership ideas.
+              </p>
+              <div class="mt-4">
+                <i class="fas fa-paper-plane text-[#8b0000] text-3xl"></i>
+              </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-[#8b0000] to-[#6b0000] rounded-xl p-6 shadow-lg text-white transform hover:scale-[1.02] transition-transform duration-300">
+              <h3 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-share-alt mr-3"></i> Social Connection
+              </h3>
+              <p class="mb-4">
+                Follow and message us on our social platforms to stay updated with our culinary adventures.
+              </p>
+              <div class="space-y-3 mt-4">
+                {socialLinks.map((social) => (
+                  <a href={social.url} target="_blank" rel="noopener noreferrer" class="flex items-center text-[#ffdb58] hover:text-white transition-colors">
+                    <i class={`${social.icon} mr-3 text-xl`}></i>
+                    <span>{social.handle}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Cards Section -->
+  <section class="py-16 bg-[#f0f0f0]">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-[#8b0000] mb-12">Ways to Connect</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+          <div class="h-32 bg-gradient-to-r from-[#8b0000] to-[#a50000] flex items-center justify-center">
+            <i class="fas fa-envelope-open-text text-white text-4xl"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#333] mb-3">Story Sharing</h3>
+            <p class="text-gray-600 mb-4">
+              Share your family recipes, cultural traditions, or memories connected to chicken dishes.
+            </p>
+            <a href="mailto:info@friedfaith.com" class="inline-block text-[#8b0000] font-semibold hover:text-[#a50000] transition-colors">
+              Submit Your Story <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+          <div class="h-32 bg-gradient-to-r from-[#ffdb58] to-[#ffc92b] flex items-center justify-center">
+            <i class="fas fa-handshake text-[#8b0000] text-4xl"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#333] mb-3">Collaboration</h3>
+            <p class="text-gray-600 mb-4">
+              Partner with us on cultural research, events, or educational initiatives.
+            </p>
+            <a href="mailto:info@friedfaith.com" class="inline-block text-[#8b0000] font-semibold hover:text-[#a50000] transition-colors">
+              Explore Opportunities <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+          <div class="h-32 bg-gradient-to-r from-[#8b0000] to-[#6b0000] flex items-center justify-center">
+            <i class="fas fa-question-circle text-white text-4xl"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#333] mb-3">Inquiries</h3>
+            <p class="text-gray-600 mb-4">
+              Have questions about our mission, upcoming projects, or services?
+            </p>
+            <a href="mailto:info@friedfaith.com" class="inline-block text-[#8b0000] font-semibold hover:text-[#a50000] transition-colors">
+              Ask Our Team <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-[#8b0000] to-[#6b0000]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Join Our Cultural Journey</h2>
+      <p class="text-xl text-[#ffdb58] max-w-2xl mx-auto mb-8">
+        Together, we'll explore how chicken nourishes cultures and connects communities across the world.
+      </p>
+      <div class="flex justify-center">
+        <a href="mailto:info@friedfaith.com" class="bg-[#ffdb58] text-[#8b0000] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:bg-[#ffc92b] transform hover:scale-105 transition-all duration-300">
+          Start the Conversation
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .hero-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6zm48 28c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6zm-24-8c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6zm-24-8c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6zm72 30c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6zM34 9c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6zm60 0c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6zM18 78c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6zm60-60c0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6z' fill='%23ffdb58' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+</style>

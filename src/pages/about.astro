@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Fried Faith";
+const pageDescription = "Discover the vibrant world of chicken's cultural and culinary legacy through bold stories and energetic explorations on Fried Faith.";
+
+const missionItems = [
+  {
+    icon: "fas fa-heritage",
+    title: "Cultural Narratives",
+    description: "Uncover how chicken has shaped histories, from ancient festivals to modern street food scenes."
+  },
+  {
+    icon: "fas fa-recipe",
+    title: "Culinary Adventures",
+    description: "Recipes, techniques, and tales from diverse cuisines that ignite the senses."
+  },
+  {
+    icon: "fas fa-soul",
+    title: "Soulful Insights",
+    description: "Deep dives into the traditions and stories that make each dish meaningful."
+  }
+];
+
+const testimonials = [
+  {
+    quote: "Fried Faith transformed how I see chicken. It's not just food—it's culture!",
+    author: "Marcus Chen"
+  },
+  {
+    quote: "The stories behind each recipe make every meal a journey through time.",
+    author: "Aisha Patel"
+  },
+  {
+    quote: "A masterpiece of cultural food storytelling. Truly inspiring!",
+    author: "Jonathan Rodriguez"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#8b0000] to-[#5a0000] py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          About Fried Faith
+        </h1>
+        <p class="text-xl md:text-2xl text-[#ffdb58] font-serif italic mb-10">
+          Exploring Chicken's Soul-Stirring Stories in Culture and Cuisine
+        </p>
+        <div class="w-24 h-1 bg-[#ffdb58] mx-auto"></div>
+      </div>
+    </div>
+    
+    <!-- Animated decorative elements -->
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent"></div>
+  </div>
+
+  <!-- Mission Section -->
+  <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#8b0000] mb-4">Our Mission</h2>
+        <div class="w-20 h-1 bg-[#ffdb58] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {missionItems.map((item, index) => (
+          <div key={index} class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 border-t-4 border-[#8b0000]">
+            <div class="text-5xl text-[#8b0000] mb-6">
+              <i class={item.icon}></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">{item.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="py-20 bg-[#fff8f0]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2">
+          <div class="relative">
+            <div class="bg-[#8b0000] w-full h-96 rounded-xl shadow-2xl transform rotate-3"></div>
+            <div class="absolute inset-0 bg-[#ffdb58] w-full h-96 rounded-xl shadow-2xl transform -rotate-3"></div>
+            <div class="absolute inset-4 bg-gradient-to-br from-[#8b0000] to-[#5a0000] rounded-xl flex items-center justify-center">
+              <div class="bg-white w-64 h-64 rounded-full flex items-center justify-center">
+                <i class="fas fa-chicken text-8xl text-[#8b0000]"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <h2 class="text-4xl font-bold text-[#8b0000] mb-6">Welcome to Fried Faith</h2>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            At Fried Faith, we dive deep into the sizzling heart of one of the world's most beloved ingredients: chicken. 
+            From the crispy allure of Southern fried chicken to the sacred rituals of global feasts, our platform celebrates 
+            the <span class="font-bold text-[#8b0000]">bold</span> and <span class="font-bold text-[#8b0000]">energetic</span> threads of cultural heritage woven through every bite.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            We believe that food is more than sustenance—it's a vessel for stories, traditions, and connections. 
+            Our mission is to bring these narratives to life through rich content that honors the culinary arts 
+            while celebrating the people who create them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gradient-to-br from-[#8b0000] to-[#5a0000]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">What Our Readers Say</h2>
+        <div class="w-20 h-1 bg-[#ffdb58] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl border border-white border-opacity-20">
+            <div class="text-4xl text-[#ffdb58] mb-4">"</div>
+            <p class="text-white text-lg mb-6 italic">{testimonial.quote}</p>
+            <p class="text-[#ffdb58] font-bold">— {testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6">Join the Journey</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-10 text-gray-300">
+        Discover the bold stories and energetic culinary experiences that make Fried Faith a celebration of chicken's soul-stirring heritage.
+      </p>
+      <button class="bg-[#ffdb58] text-[#8b0000] font-bold py-4 px-8 rounded-full text-lg hover:bg-[#ffc82c] transition-colors duration-300 transform hover:scale-105">
+        Explore Our Stories
+      </button>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .hero-pattern {
+    background: radial-gradient(circle at 10% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 20%), 
+                radial-gradient(circle at 90% 80%, rgba(255, 219, 88, 0.05) 0%, transparent 20%);
+  }
+  
+  .hover:-translate-y-2 {
+    transition: transform 0.3s ease;
+  }
+  
+  .transform.rotate-3 {
+    transform: rotate(3deg);
+  }
+  
+  .transform.-rotate-3 {
+    transform: rotate(-3deg);
+  }
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+</style>
